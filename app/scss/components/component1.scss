@@ -1,2 +1,118 @@
-@use '../util' as *;
-@use '../util' as *;
+@use "../util" as *;
+@use "../globals" as *;
+
+img {
+  width: 100px;
+}
+
+body {
+  background-color: $background-color;
+  display: grid;
+  height: 100vh;
+  place-content: center;
+  font-family: "Varela Round", sans-serif;
+  font-weight: 400;
+  @include breakpoint-down("small") {
+    //  padding: 400px;
+  }
+}
+.card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "nav preview"
+    "description preview"
+    "thumbnail preview";
+  @include border-radius;
+
+  background-color: #fff;
+  padding: 10px 0 0 40px;
+  min-width: 650px;
+
+  .nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+
+    padding: 20px 20px;
+    align-items: baseline;
+    img {
+      width: 15px;
+    }
+    & img:first-of-type {
+      width: 25px;
+    }
+  }
+  .description {
+    grid-area: description;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    p {
+      color: $secondary;
+    }
+    h3,
+    h1 {
+      color: $primary;
+    }
+    h1 {
+      padding-top: 4px;
+      font-weight: 700;
+      font-size: 34px;
+    }
+  }
+  .thumbnail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    grid-area: thumbnail;
+
+    img {
+      border-radius: 5px;
+      object-fit: cover;
+      width: 70px;
+      height: 77px;
+    }
+  }
+  .preview {
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    grid-area: preview;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+    
+    @include border-radius;
+    img {
+      border-radius: 20px;
+
+      min-width: 100%;
+      // min-height: 70%;
+    }
+  }
+
+  @include breakpoint-down("small") {
+    min-width: 350px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "nav "
+      "description "
+      "preview "
+      "thumbnail ";
+    padding: 10px 0 0 30px;
+
+    .nav {
+      padding: 10px 40px 20px 0;
+    }
+
+    .thumbnail {
+      padding-bottom: 20px;
+    }
+  }
+}
