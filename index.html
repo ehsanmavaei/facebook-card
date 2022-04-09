@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title></title>
-		<link rel="stylesheet" href="/dist/style.css" />
-		<script defer src="/dist/script.js"></script>
-	</head>
-	<body>
-		<div class="card">
-			<div class="section nav">
-				<img src="./app/assets/images/facebook-svgrepo-com.svg" alt="">
-				<img src="./app/assets/images/home-svgrepo-com.svg" alt="">
-				<img src="./app/assets/images/flag-svgrepo-com.svg" alt="">
-				<img src="./app/assets/images/four-lines-svgrepo-com.svg" alt="">
-			</div>
-			<section class="description">
-				<p>Brazil</p>
-				 <section class="date">
-					 <h3>June 8</h3>
-					 <h1>Code day</h1>
-				 </section>
-			</section>
-			<section class="thumbnail">
-				<img src="./app/assets/images/angelo-pantazis-h0AnGGgseio-unsplash.jpg" alt="">
-				<img src="./app/assets/images/ian-dooley-TLD6iCOlyb0-unsplash.jpg" alt="">
-			</section>
-			<section class="preview">
-				<img src="./app/assets/images/angelo-pantazis-h0AnGGgseio-unsplash.jpg" alt="">
-			</section>
-		</div>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="/dist/style.css" />
+    <script defer src="/dist/script.js"></script>
+  </head>
+  <body>
+    <div class="card">
+      <div class="section nav">
+        <img src="./app/assets/images/facebook-svgrepo-com.svg" alt="" />
+        <img src="./app/assets/images/home-svgrepo-com.svg" alt="" />
+        <img src="./app/assets/images/flag-svgrepo-com.svg" alt="" />
+        <img src="./app/assets/images/four-lines-svgrepo-com.svg" alt="" />
+      </div>
+      <section class="description">
+        <p>Brazil</p>
+        <section class="date">
+          <h3>June 8</h3>
+          <h1>Code day</h1>
+        </section>
+      </section>
+
+      <section class="thumbnail">
+        <div id="controls-container">
+          <img
+            src="./app/assets/images/angelo-pantazis-h0AnGGgseio-unsplash.jpg"
+            alt=""
+            class="control-btn"
+            data-image="1"
+          />
+          <img
+            src="./app/assets/images/ian-dooley-TLD6iCOlyb0-unsplash.jpg"
+            alt=""
+            class="control-btn"
+            data-image="2"
+          />
+        </div>
+      </section>
+
+      <section class="preview">
+        <div id="images-container">
+          <div class="image image-1" id="1" data-active="active"></div>
+          <div class="image image-2" id="2"></div>
+         
+        </div>
+      </section>
+    </div>
+  </body>
 </html>
